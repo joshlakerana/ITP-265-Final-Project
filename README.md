@@ -1,2 +1,61 @@
 # ITP-265-Final-Project
 Final individual project for Object Oriented Programming in Java course
+
+PROJECT OVERVIEW:
+
+This project is a Party Planning/Evite System.
+
+It contains a UserDatabase and a PartyDatabase that interact with each other to make the following features possible:
+    Creating parties that are owned by a specific User and only editable by them
+    Allowing Users to invite other Users to their events -- these invites show up when other Users log in and are answerable
+    Sending party specifics to invited Users when they receive an invite
+    Allow User and Party databases to initialize from txt files and assign the read-in parties to their owners
+
+Two different class hierarchies:
+    User:
+        Stores email, password, name, age
+        Admin:
+            No special attributes but has access to deleting users and changing prices
+        Guest:
+            Stores User attributes and a map of parties they've been invited to with their RSVP status
+            Host:
+                Stores list of hosted parties, hostPoints (not fully implemented), hostRating (not fully implemented) and whether or not their account is public (not fully implemented)
+                FreeHost: ability to upgrade to PremiumHost
+                PremiumHost: stores friends list, blocked list and premium subscription info
+                    TrialHost: stores expiration and trial info
+
+    Party:
+        Stores name, theme, party type (enum), theme, date, time, address, venue
+        PublicParty: stores guest limit, ticket price and whether or not people can still rsvp (not fully implemented)
+        PrivateParty: stores whether a gift is required and whether it is a surprise
+
+
+
+It has 5 different types of User accounts built from the abstract User class:
+    Admin - can add or delete users, and change the premium pricing
+    Guest - can only receive and answer invites
+    PremiumHost - can create and edit their own parties, receive and answer invites, have friends list and blocked lists and view their premium plan info
+    FreeHost - can create and edit their own parties, and receive and answer invites
+    TrialHost - same as PremiumHost but has the ability to upgrade to keep account permanent
+
+    Premium, Free and Trial users can either cancel or upgrade their plans to the other types
+        Copies their user info to new account
+
+It has 2 different types of Party objects built from the abstract Party Class:
+    PublicParty - has the options to set a guest limit, set ticket price, and change whether people can rsvp
+    PrivateParty - has the options to require a gift, and notify guests if its a surprise party
+
+Other features:
+    The program can save users and parties to txt files
+    Ability to login to different users in one sitting
+    Separate menus for each user type
+
+To be implemented:
+    Ability to save guest lists and invites to files
+    Ability to change party to public or private
+    Give admin more function
+    Let the program hold payment info for premium and trial users
+    Make the blocking feature more useful
+    Host Points
+    Host Ratings
+    Public vs Private accounts
