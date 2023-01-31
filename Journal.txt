@@ -1,0 +1,104 @@
+Thursday 12/1:     Overview: Created all classes from the UML I made on Monday 12/28
+
+            30 MINUTE SESSION
+            Built out basic Main_Project.model.Party class
+            Created Main_Project.model.PartyType enum
+            Messed around with LocalTime to see how best to use it for the project
+            Created Main_Project.model.User class
+
+Tuesday 12/6 (3:30 AM):     Overview: Cleaned up classes from my original UML, kept filling in basic methods in them
+
+            30 MINUTE SESSION
+            Copied over Main_Project.model.User and Main_Project.controller.UserDatabase classes from A11 and modified them for this project
+            I like the way I coded those and thought it would be much easier to use them than to start from scratch
+            Decided I should have an Main_Project.model.Admin subclass to Main_Project.model.User so that someone can login and alter other Main_Project.model.User classes
+            Started a Main_Project.controller.PartyDatabase class as well so they can be written to files too
+
+Tuesday 12/6 (6:30 PM):     Overview: Changed the hiearchy of the user side of things so that Hosts extend from Guests and started figuring out how to assign events to hosts when they're created
+
+            1 HOUR SESSION
+            Created new enum for RSVPs instead of doing a boolean so Guests can say "maybe"
+            Built out the guest/host/admin classes and their hierarchy to make more sense
+
+Tuesday 12/6 (8:30 PM):     Overview: Built out a lot of the main program and menus, started putting together the switches for each user type and fixed a lot of errors along the way
+
+            3 HOUR SESSION
+            Made Menu enums for each type of user that will be using the site
+            Started the main program class that will run the evite system
+            Fixed the Databases so they can read the correct info from files
+            Started making the run() method for main
+            Made the createAccount method in the Main Program class able to create different types of users
+            Removed Usernames from the system since they weren't needed
+            Got the createAccount method to run but now I need constructors for each type of account
+            Fixed a ton of errors
+            The main program now automatically makes an admin user that will be able to control the databases and evite system
+
+Wednesday 12/7 (12:00 AM):      Overview: Made the cancelPremium() method, took a while
+
+            1 HOUR SESSION
+            Made the method to cancel the premium plan.
+                Had to copy over all similar data from the premium user object to a free user object
+
+Thursday 12/8 (10:45 PM):       Overview: Filled out the party subclasses and did a ton of error fixing to get the code to run
+
+            1.5 HOUR SESSION
+            Simplified the cancelling feature using a new cancellable interface (no need for password reset now)
+            Filled out a large portion of the party subclasses
+            Did a lot of error fixing
+            FINALLY GOT THE CODE TO COMPILE!!!!
+
+Saturday 12/10 (12:45 AM):      Overview: Fixed a lot of the enum menus and started working on methods within the main program that make the menus functional
+
+            2.5 HOUR SESSION
+            Added proper toString() method to party class
+            Filled out the enum menus more, began work on getting each menu to function properly
+            Added PartyEditMenu enum for another menu
+            Added getPartyByOwner and printAllPartiesInfo methods to partyDatabase to help with menu functionality
+            Added printPlan() to cancellable interface
+            About 2/3 of the way done with the menu options, need to make the party editor menu still
+            Update: got the program to run again with the different menus, but it is stuck on the initialMenu and won't login past it, will fix in morning
+            Nevermind I just fixed this^^
+
+Saturday 12/10 (1:00 PM):       Overview: Got most of the user menus' functions working except for the party editor and invite manager
+
+            1 HOUR SESSION
+            Added functionality for following menu options
+                add friend
+                remove friend
+                block
+                unblock
+                show parties
+                new party
+            Created a currentParty variable so that the code can check if a user owns the party they want to edit and to make editing more simple
+            Started on the invites functionality, had to make another variable for the mainProgram called currentInviteParty so that it doesnt conflict with currentUserParty
+
+Saturday 12/10 (4:00 PM)        Overview: Made invites and party editing functional, hours of error checking to get it to run correctly
+
+            5 HOUR SESSION
+            Made invites functional
+            Split partyeditmenu into two different menus for public and private parties
+            Got the initialMenu to save files
+            Made showPlan functional for trial and premium hosts
+            Finished the party edit menus
+            Program now runs
+            Error fixing (too many to list but a lot of fixing adding users and parties to databases and accessing them)
+            Made a demo_users file to initialize in the system to make testing easier
+            Finally got the invite features to work
+            Worried that initializing parties will not put them to the correct user
+            Nevermind I think I finished this^
+            Had to fix the way it determines class of party from the party file
+            Everything seems to work now!
+
+PROJECT FINISHED!
+Things I would like to implement if given more time:
+    Ability to write guest lists and invites to files
+    Ability to change party to public or private
+    Give admin more function
+    Let the program hold payment info for premium and trial users
+    Make the blocking feature more useful
+
+
+
+
+
+
